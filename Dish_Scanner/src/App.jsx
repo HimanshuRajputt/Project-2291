@@ -1,35 +1,89 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import DishDetails from "./Components/DishDetails";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const dishes = {
+    idliVadaCombo: {
+      dishName: "Idli Vada Combo",
+      items: [
+        { name: "Idli", quantity: 2, calories: 100 },
+        { name: "Vada", quantity: 1, calories: 200 },
+        { name: "Sambhar", quantity: 1, calories: 120 },
+        { name: "Chutney", quantity: 1, calories: 80 },
+      ],
+    },
+    pastaAlfredo: {
+      dishName: "Pasta Alfredo",
+      items: [
+        { name: "Pasta", quantity: 1, calories: 350 },
+        { name: "Alfredo Sauce", quantity: 1, calories: 250 },
+        { name: "Parmesan Cheese", quantity: 50, calories: 100 },
+        { name: "Mushrooms", quantity: 100, calories: 22 },
+      ],
+    },
+  };
+
+  const [dishData, setDishData] = useState(
+    Object.fromEntries(
+      Object.entries(dishes).map(([key, value]) => [
+        key,
+        {
+          ...value,items: value.items.map((item) => ({...item,userQuantity: item.quantity,})),
+        },
+      ])
+    )
+  );
+
+  const [currentDishIndex, setCurrentDishIndex] = useState(0);
+  const dishKeys = Object.keys(dishData);
+
+  const handleQuantityChange = (itemIndex, newQuantity) => {
+    const currentDishKey = dishKeys[currentDishIndex];
+    setDishData((prevState) => {
+      const updatedDish = { ...prevState[currentDishKey] };
+      updatedDish.items[itemIndex].userQuantity = newQuantity;
+      return { ...prevState, [currentDishKey]: updatedDish };
+    });
+  };
+
+  const calculateTotalCalories = (items) =>
+    items.reduce(
+      (total, item) =>
+        total + (item.userQuantity * item.calories) / item.quantity,
+      0
+    );
+
+  const currentDishKey = dishKeys[currentDishIndex];
+  const currentDish = dishData[currentDishKey];
+  const totalCalories = calculateTotalCalories(currentDish.items);
+
+  const goToNextDish = () => {
+    setCurrentDishIndex((prevIndex) =>
+      prevIndex === dishKeys.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const goToPrevDish = () => {
+    setCurrentDishIndex(
+      (prevIndex) => (prevIndex === 0 ? dishKeys.length - 1 : prevIndex - 1)
+    );
+  };
 
   return (
-    <>
+    <div>
+      <DishDetails
+        dish={currentDish}
+        onQuantityChange={handleQuantityChange}
+        totalCalories={totalCalories}
+      />
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button onClick={goToPrevDish} style={{ marginRight: "10px" }}>
+          Previous Dish
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <button onClick={goToNextDish}>Next Dish</button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    </div>
+  );
+};
 
-export default App
+export default App;
