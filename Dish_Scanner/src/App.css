@@ -1,26 +1,135 @@
-@keyframes moveBeam {
-  0% {
-    top: 0; /* Start slightly above the container */
-  }
-  100% {
-    top: 105%; /* End slightly below the container */
-  }
+/* General styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(to bottom right, #f3f4f6, #e5e7eb);
+  padding: 20px;
 }
 
+/* Home Container */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Titles */
+.home-title,
+.scanner-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Image */
+.home-image {
+  width: 90%;
+  max-width: 400px;
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+/* Scanner Container */
 .scanner-container {
-  position: relative;
-  width: 100%; /* Full width of the parent container */
-  height: 400px; /* Height of the scanner container (adjust as needed) */
-  overflow: hidden; /* Hide the part of the beamlight that goes outside */
-  border: 2px solid #ccc; /* Optional: Border to visually indicate the scanner area */
+  width: 90%;
+  max-width: 400px;
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
 }
 
-.beamlight {
-  position: absolute;
-  left: 0;
-  width: 100%; /* Same width as the scanner container */
-  height: 5px; /* Height of the beamlight */
-  background: rgba(255, 255, 255, 0.6); /* Beam color */
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Glowing effect */
-  animation: moveBeam 2s linear infinite; /* Speed and infinite loop */
+/* Buttons */
+.home-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.scan-button {
+  background-color: #4caf50;
+}
+
+.scan-button:hover {
+  background-color: #45a049;
+}
+
+.back-button {
+  background-color: #ff5722;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.back-button:hover {
+  background-color: #e64a19;
+}
+
+/* Edit Page Container */
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  background-color: #f9fafb;
+  color: #333;
+}
+
+/* Food Information */
+.food-info {
+  text-align: center;
+  max-width: 600px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Food Name */
+.food-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Food Ingredients */
+.food-ingredients {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Food Image */
+.food-image {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* No Data Message */
+.no-data {
+  font-size: 18px;
+  color: #777;
+  margin-top: 20px;
 }

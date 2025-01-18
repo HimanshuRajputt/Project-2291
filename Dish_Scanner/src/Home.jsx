@@ -1,30 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 import BarcodeScannerComponent from "react-qr-barcode-scanner";
 import axios from "axios";
-import { FoodContext } from "./FoodContext"; // Import the context
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { FoodContext } from "./FoodContext";
+import { useNavigate } from "react-router-dom";
+import "./App.css"; // Import the styles
 
 function Home() {
-  const { updateFoodData } = React.useContext(FoodContext); // Use context to get the update function
-  const navigate = useNavigate(); // Get the navigate function
+  const { updateFoodData } = React.useContext(FoodContext);
+  const navigate = useNavigate();
+  const [showScanner, setShowScanner] = useState(false);
 
   return (
-    <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"100vh",borderImage:"src(Project-2291\Dish_Scanner\public\c895b628-fd97-4273-ba2a-a15d64a454de.webp)",backgroundSize:"cover"}}>
-      <BarcodeScannerComponent
-        width={500}
-        height={500}
-        onUpdate={(err, result) => {
-          if (result) {
-            axios
-              .get(`https://world.openfoodfacts.org/api/v0/product/${result.text}`)
-              .then((response) => {
-                console.log(response.data);
-                updateFoodData(response.data); // Update context with the fetched data
-                navigate("/edit"); // Navigate to the Edit page after updating the context
-              });
-          }
-        }}
-      />
+    <div className="home-container">
+      {!showScanner ? (
+        <>
+          <h1 className="home-title">Welcome to Dish Scanner</h1>
+          <img src="/qr-scan.gif" alt="Placeholder" className="home-image" />
+          <button
+            onClick={() => setShowScanner(true)}
+            className="home-button scan-button"
+          >
+            Start Scanning
+          </button>
+        </>
+      ) : (
+        <>
+          <h1 className="scanner-title">Scan the Barcode</h1>
+          <div className="scanner-container">
+            <BarcodeScannerComponent
+              width="100%"
+              height="100%"
+              onUpdate={(err, result) => {
+                if (result) {
+                  axios
+                    .get(
+                      `https://world.openfoodfacts.org/api/v0/product/${result.text}`
+                    )
+                    .then((response) => {
+                      const data = response.data;
+                      if (data.status === 0) {
+                        alert("Product not found. Ensure it is a food item");
+                        setShowScanner(false); // Hide scanner
+                      } else {
+                        updateFoodData(data);
+                        navigate("/edit");
+                      }
+                    })
+                    .catch((error) => {
+                      console.error("Error fetching product data:", error);
+                      alert("An error occurred while fetching the data.");
+                    });
+                }
+              }}
+            />
+          </div>
+          <button
+            onClick={() => setShowScanner(false)}
+            className="home-button back-button"
+          >
+            Back
+          </button>
+        </>
+      )}
     </div>
   );
 }
