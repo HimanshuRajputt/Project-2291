@@ -1,42 +1,26 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes moveBeam {
+  0% {
+    top: 0; /* Start slightly above the container */
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    top: 105%; /* End slightly below the container */
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.scanner-container {
+  position: relative;
+  width: 100%; /* Full width of the parent container */
+  height: 400px; /* Height of the scanner container (adjust as needed) */
+  overflow: hidden; /* Hide the part of the beamlight that goes outside */
+  border: 2px solid #ccc; /* Optional: Border to visually indicate the scanner area */
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.beamlight {
+  position: absolute;
+  left: 0;
+  width: 100%; /* Same width as the scanner container */
+  height: 5px; /* Height of the beamlight */
+  background: rgba(255, 255, 255, 0.6); /* Beam color */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Glowing effect */
+  animation: moveBeam 2s linear infinite; /* Speed and infinite loop */
 }
