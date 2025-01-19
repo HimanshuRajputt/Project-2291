@@ -1,0 +1,150 @@
+/* NotFound.css */
+
+/* Global styling */
+body {
+  /* margin: 0; */
+  font-family: "Poppins", sans-serif;
+  /* background-color: #f4f4fc; */
+  color: #444;
+}
+
+/* Main container */
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Content container */
+.not-found-content {
+  z-index: 10;
+}
+
+/* Title styling */
+.not-found-title {
+  font-size: 8rem;
+  font-weight: 800;
+  margin: 0;
+  color: #7a5ffa;
+  text-shadow: 4px 4px 10px rgba(122, 95, 250, 0.5);
+  animation: float 3s infinite ease-in-out;
+}
+
+/* Message styling */
+.not-found-message {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* Button styling */
+.not-found-button {
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #7a5ffa;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0px 8px 20px rgba(122, 95, 250, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.not-found-button:hover {
+  background-color: #674ae0;
+  box-shadow: 0px 12px 30px rgba(122, 95, 250, 0.5);
+}
+
+/* Animation container */
+.not-found-animation {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 50%;
+}
+
+/* Circle animation */
+.not-found-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7a5ffa, #a67cfd);
+  animation: bounce 2s infinite ease-in-out;
+}
+
+/* Shadow animation */
+.not-found-shadow {
+  width: 120px;
+  height: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  margin-top: -30px;
+  animation: shadow 2s infinite ease-in-out;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes shadow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.3;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .not-found-title {
+    font-size: 6rem;
+  }
+
+  .not-found-message {
+    font-size: 1.2rem;
+    padding: 0 20px;
+  }
+
+  .not-found-button {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+
+  .not-found-circle {
+    width: 90px;
+    height: 90px;
+  }
+
+  .not-found-shadow {
+    width: 90px;
+    height: 8px;
+  }
+}

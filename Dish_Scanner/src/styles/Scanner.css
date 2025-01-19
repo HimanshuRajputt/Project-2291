@@ -1,0 +1,78 @@
+/* General Container */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* border: 5px solid white; */
+  }
+  
+  /* Titles */
+  .home-title,
+  .scanner-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #121111;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Image */
+  .home-image {
+    border: 2px solid white;
+    width: 90%;
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+  }
+  
+  /* Scanner Container */
+  .scanner-container {
+    width: 90%;
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+  }
+  
+  /* Buttons */
+  .home-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .scan-button {
+    background-color: #4caf50;
+  }
+  
+  .scan-button:hover {
+    background-color: #45a049;
+  }
+  
+  .back-button {
+    background-color: #ff5722;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .back-button:hover {
+    background-color: #e64a19;
+  }
+  

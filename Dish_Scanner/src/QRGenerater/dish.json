@@ -1,0 +1,504 @@
+[
+    {
+      "id": 1,
+      "dishName": "Idli Vada Combo",
+      "items": [
+        { "name": "Idli", "quantity": 2, "calories": 100 },
+        { "name": "Vada", "quantity": 1, "calories": 200 },
+        { "name": "Sambhar", "quantity": 1, "calories": 120 },
+        { "name": "Chutney", "quantity": 1, "calories": 80 }
+      ]
+    },
+    {
+      "id": 2,
+      "dishName": "Pasta Alfredo",
+      "items": [
+        { "name": "Pasta", "quantity": 1, "calories": 350 },
+        { "name": "Alfredo Sauce", "quantity": 1, "calories": 250 },
+        { "name": "Parmesan Cheese", "quantity": 50, "calories": 100 },
+        { "name": "Mushrooms", "quantity": 100, "calories": 22 }
+      ]
+    },
+    {
+      "id": 3,
+      "dishName": "Veggie Burger Meal",
+      "items": [
+        { "name": "Burger Bun", "quantity": 1, "calories": 300 },
+        { "name": "Veggie Patty", "quantity": 1, "calories": 200 },
+        { "name": "Cheese Slice", "quantity": 1, "calories": 150 },
+        { "name": "Fries", "quantity": 1, "calories": 250 }
+      ]
+    },
+    {
+      "id": 4,
+      "dishName": "Greek Salad",
+      "items": [
+        { "name": "Lettuce", "quantity": 1, "calories": 15 },
+        { "name": "Cucumber", "quantity": 1, "calories": 10 },
+        { "name": "Tomatoes", "quantity": 1, "calories": 18 },
+        { "name": "Olives", "quantity": 1, "calories": 40 },
+        { "name": "Feta Cheese", "quantity": 50, "calories": 120 }
+      ]
+    },
+    {
+      "id": 5,
+      "dishName": "Grilled Paneer",
+      "items": [
+        { "name": "Paneer", "quantity": 200, "calories": 265 },
+        { "name": "Olive Oil", "quantity": 1, "calories": 120 },
+        { "name": "Garlic", "quantity": 1, "calories": 4 },
+        { "name": "Spices", "quantity": 1, "calories": 30 }
+      ]
+    },
+    {
+      "id": 6,
+      "dishName": "Fried Rice",
+      "items": [
+        { "name": "Rice", "quantity": 1, "calories": 200 },
+        { "name": "Vegetables", "quantity": 1, "calories": 100 },
+        { "name": "Soy Sauce", "quantity": 1, "calories": 50 },
+        { "name": "Tofu", "quantity": 100, "calories": 120 }
+      ]
+    },
+    {
+      "id": 7,
+      "dishName": "Pizza Margherita",
+      "items": [
+        { "name": "Pizza Base", "quantity": 1, "calories": 300 },
+        { "name": "Tomato Sauce", "quantity": 1, "calories": 100 },
+        { "name": "Mozzarella Cheese", "quantity": 50, "calories": 200 },
+        { "name": "Basil", "quantity": 1, "calories": 5 }
+      ]
+    },
+    {
+      "id": 8,
+      "dishName": "Vegetable Sushi Roll",
+      "items": [
+        { "name": "Seaweed", "quantity": 1, "calories": 20 },
+        { "name": "Rice", "quantity": 1, "calories": 200 },
+        { "name": "Avocado", "quantity": 1, "calories": 80 },
+        { "name": "Cucumber", "quantity": 1, "calories": 10 }
+      ]
+    },
+    {
+      "id": 9,
+      "dishName": "Veggie Tacos",
+      "items": [
+        { "name": "Taco Shell", "quantity": 1, "calories": 150 },
+        { "name": "Black Beans", "quantity": 100, "calories": 114 },
+        { "name": "Cheese", "quantity": 50, "calories": 100 },
+        { "name": "Lettuce", "quantity": 1, "calories": 15 },
+        { "name": "Salsa", "quantity": 1, "calories": 30 }
+      ]
+    },
+    {
+      "id": 10,
+      "dishName": "Stir Fry Vegetables",
+      "items": [
+        { "name": "Vegetables", "quantity": 1, "calories": 100 },
+        { "name": "Olive Oil", "quantity": 1, "calories": 120 },
+        { "name": "Garlic", "quantity": 1, "calories": 4 },
+        { "name": "Soy Sauce", "quantity": 1, "calories": 50 }
+      ]
+    },
+    {
+      "id": 11,
+      "dishName": "Cheesecake",
+      "items": [
+        { "name": "Cream Cheese", "quantity": 200, "calories": 350 },
+        { "name": "Sugar", "quantity": 100, "calories": 400 },
+        { "name": "Butter", "quantity": 50, "calories": 380 },
+        { "name": "Eggs", "quantity": 2, "calories": 140 }
+      ]
+    },
+    {
+      "id": 12,
+      "dishName": "Caesar Salad",
+      "items": [
+        { "name": "Lettuce", "quantity": 1, "calories": 15 },
+        { "name": "Caesar Dressing", "quantity": 1, "calories": 150 },
+        { "name": "Croutons", "quantity": 1, "calories": 80 },
+        { "name": "Parmesan Cheese", "quantity": 50, "calories": 100 }
+      ]
+    },
+    {
+      "id": 13,
+      "dishName": "Spring Rolls",
+      "items": [
+        { "name": "Rice Paper", "quantity": 1, "calories": 30 },
+        { "name": "Vegetables", "quantity": 1, "calories": 100 },
+        { "name": "Tofu", "quantity": 100, "calories": 120 },
+        { "name": "Soy Sauce", "quantity": 1, "calories": 50 }
+      ]
+    },
+    {
+      "id": 14,
+      "dishName": "Fruit Salad",
+      "items": [
+        { "name": "Apple", "quantity": 1, "calories": 95 },
+        { "name": "Banana", "quantity": 1, "calories": 105 },
+        { "name": "Orange", "quantity": 1, "calories": 62 },
+        { "name": "Grapes", "quantity": 1, "calories": 62 }
+      ]
+    },
+    {
+      "id": 15,
+      "dishName": "Chocolate Cake",
+      "items": [
+        { "name": "Flour", "quantity": 200, "calories": 364 },
+        { "name": "Sugar", "quantity": 100, "calories": 400 },
+        { "name": "Cocoa Powder", "quantity": 50, "calories": 220 },
+        { "name": "Butter", "quantity": 100, "calories": 380 }
+      ]
+    },
+    {
+      "id": 16,
+      "dishName": "Vegetarian Pizza",
+      "items": [
+        { "name": "Pizza Base", "quantity": 1, "calories": 300 },
+        { "name": "Tomato Sauce", "quantity": 1, "calories": 100 },
+        { "name": "Mozzarella Cheese", "quantity": 50, "calories": 200 },
+        { "name": "Bell Peppers", "quantity": 1, "calories": 25 }
+      ]
+    },
+    {
+      "id": 17,
+      "dishName": "Tomato Soup",
+      "items": [
+        { "name": "Tomatoes", "quantity": 200, "calories": 40 },
+        { "name": "Onions", "quantity": 50, "calories": 20 },
+        { "name": "Garlic", "quantity": 1, "calories": 4 },
+        { "name": "Olive Oil", "quantity": 1, "calories": 120 }
+      ]
+    },
+    {
+      "id": 18,
+      "dishName": "Avocado Toast",
+      "items": [
+        { "name": "Whole Grain Bread", "quantity": 1, "calories": 80 },
+        { "name": "Avocado", "quantity": 1, "calories": 80 },
+        { "name": "Tomatoes", "quantity": 50, "calories": 10 },
+        { "name": "Olive Oil", "quantity": 1, "calories": 120 }
+      ]
+    },
+    {
+      "id": 19,
+      "dishName": "Vegetable Biryani",
+      "items": [
+        { "name": "Rice", "quantity": 200, "calories": 260 },
+        { "name": "Vegetables", "quantity": 100, "calories": 70 },
+        { "name": "Yogurt", "quantity": 50, "calories": 60 },
+        { "name": "Spices", "quantity": 1, "calories": 30 }
+      ]
+    },
+    {
+      "id": 20,
+      "dishName": "Paneer Butter Masala",
+      "items": [
+        { "name": "Paneer", "quantity": 150, "calories": 250 },
+        { "name": "Butter", "quantity": 50, "calories": 380 },
+        { "name": "Tomatoes", "quantity": 100, "calories": 18 },
+        { "name": "Cream", "quantity": 50, "calories": 100 }
+      ]
+    },
+    {
+      "id": 21,
+      "dishName": "Falafel",
+      "items": [
+        { "name": "Chickpeas", "quantity": 100, "calories": 164 },
+        { "name": "Onions", "quantity": 50, "calories": 20 },
+        { "name": "Garlic", "quantity": 1, "calories": 4 },
+        { "name": "Olive Oil", "quantity": 1, "calories": 120 }
+      ]
+    },
+    {
+      "id": 22,
+      "dishName": "Chana Masala",
+      "items": [
+        { "name": "Chickpeas", "quantity": 200, "calories": 328 },
+        { "name": "Onions", "quantity": 50, "calories": 20 },
+        { "name": "Tomatoes", "quantity": 100, "calories": 18 },
+        { "name": "Spices", "quantity": 1, "calories": 30 }
+      ]
+    },
+    {
+      "id": 23,
+      "dishName": "Vegetable Pakora",
+      "items": [
+        { "name": "Chickpea Flour", "quantity": 100, "calories": 387 },
+        { "name": "Potatoes", "quantity": 100, "calories": 77 },
+        { "name": "Onions", "quantity": 50, "calories": 20 },
+        { "name": "Oil", "quantity": 50, "calories": 450 }
+      ]
+    },
+    {
+      "id": 24,
+      "dishName": "Lentil Soup",
+      "items": [
+        { "name": "Lentils", "quantity": 100, "calories": 116 },
+        { "name": "Onions", "quantity": 50, "calories": 20 },
+        { "name": "Garlic", "quantity": 1, "calories": 4 },
+        { "name": "Tomatoes", "quantity": 100, "calories": 18 }
+      ]
+    },
+    {
+      "id": 25,
+      "dishName": "Pav Bhaji",
+      "items": [
+        { "name": "Bread Rolls", "quantity": 2, "calories": 180 },
+        { "name": "Mixed Vegetables", "quantity": 150, "calories": 120 },
+        { "name": "Butter", "quantity": 50, "calories": 380 },
+        { "name": "Spices", "quantity": 1, "calories": 30 }
+      ]
+    },
+    {
+      "id": 26,
+      "dishName": "Veg Momos",
+      "items": [
+        { "name": "Flour", "quantity": 100, "calories": 364 },
+        { "name": "Vegetables", "quantity": 100, "calories": 70 },
+        { "name": "Soy Sauce", "quantity": 1, "calories": 50 },
+        { "name": "Spices", "quantity": 1, "calories": 30 }
+      ]
+    },
+    {
+      "id": 27,
+      "dishName": "Vegetable Korma",
+      "items": [
+        { "name": "Mixed Vegetables", "quantity": 150, "calories": 120 },
+        { "name": "Coconut Milk", "quantity": 100, "calories": 230 },
+        { "name": "Spices", "quantity": 1, "calories": 30 },
+        { "name": "Cashews", "quantity": 30, "calories": 160 }
+      ]
+    },
+    {
+      "id": 28,
+      "dishName": "Vegetable Dosa",
+      "items": [
+        { "name": "Dosa", "quantity": 1, "calories": 160 },
+        { "name": "Vegetables", "quantity": 100, "calories": 70 },
+        { "name": "Sambhar", "quantity": 1, "calories": 120 },
+        { "name": "Chutney", "quantity": 1, "calories": 80 }
+      ]
+    },
+    {
+      "id": 29,
+      "dishName": "Veg Pulao",
+      "items": [
+        { "name": "Rice", "quantity": 200, "calories": 260 },
+        { "name": "Vegetables", "quantity": 100, "calories": 70 },
+        { "name": "Spices", "quantity": 1, "calories": 30 },
+        { "name": "Cashews", "quantity": 30, "calories": 160 }
+      ]
+    },
+    {
+      "id": 30,
+      "dishName": "Veg Cutlet",
+      "items": [
+        { "name": "Potatoes", "quantity": 100, "calories": 77 },
+        { "name": "Vegetables", "quantity": 100, "calories": 70 },
+        { "name": "Bread Crumbs", "quantity": 50, "calories": 200 },
+        { "name": "Oil", "quantity": 1, "calories": 120 }
+      ]
+    },
+    {
+      "id": 31,
+      "dishName": "Aloo Gobi",
+      "items": [
+        { "name": "Potatoes", "quantity": 150, "calories": 115 },
+        { "name": "Cauliflower", "quantity": 150, "calories": 30 },
+        { "name": "Onions", "quantity": 50, "calories": 20 },
+        { "name": "Spices", "quantity": 1, "calories": 30 }
+      ]
+    },
+    {
+      "id": 32,
+      "dishName": "Vegetable Stew",
+      "items": [
+        { "name": "Mixed Vegetables", "quantity": 150, "calories": 120 },
+        { "name": "Coconut Milk", "quantity": 100, "calories": 230 },
+        { "name": "Spices", "quantity": 1, "calories": 30 },
+        { "name": "Cashews", "quantity": 30, "calories": 160 }
+      ]
+    },
+    {
+      "id": 33,
+      "dishName": "Vegetable Quiche",
+      "items": [
+        { "name": "Flour", "quantity": 100, "calories": 364 },
+        { "name": "Vegetables", "quantity": 100, "calories": 70 },
+        { "name": "Eggs", "quantity": 2, "calories": 140 },
+        { "name": "Cheese", "quantity": 50, "calories": 200 }
+      ]
+    },
+    {
+      "id": 34,
+      "dishName": "Aloo Tikki",
+      "items": [
+        { "name": "Potatoes", "quantity": 150, "calories": 115 },
+        { "name": "Spices", "quantity": 1, "calories": 30 },
+        { "name": "Oil", "quantity": 1, "calories": 120 },
+        { "name": "Bread Crumbs", "quantity": 50, "calories": 200 }
+      ]
+    },
+    {
+      "id": 35,
+      "dishName": "Mixed Vegetable Soup",
+      "items": [
+        { "name": "Vegetables", "quantity": 100, "calories": 70 },
+        { "name": "Tomatoes", "quantity": 50, "calories": 10 },
+        { "name": "Garlic", "quantity": 1, "calories": 4 },
+        { "name": "Olive Oil", "quantity": 1, "calories": 120 }
+      ]
+    },
+    {
+      "id": 36,
+      "dishName": "Veggie Burrito",
+      "items": [
+        { "name": "Tortilla", "quantity": 1, "calories": 150 },
+        { "name": "Beans", "quantity": 100, "calories": 114 },
+        { "name": "Rice", "quantity": 100, "calories": 130 },
+        { "name": "Salsa", "quantity": 1, "calories": 30 }
+      ]
+    },
+    {
+      "id": 37,
+      "dishName": "Vegetable Lasagna",
+      "items": [
+        { "name": "Lasagna Sheets", "quantity": 100, "calories": 150 },
+        { "name": "Vegetables", "quantity": 150, "calories": 120 },
+        { "name": "Cheese", "quantity": 50, "calories": 200 },
+        { "name": "Tomato Sauce", "quantity": 50, "calories": 100 }
+      ]
+    },
+    {
+      "id": 38,
+      "dishName": "Vegetable Stir Fry",
+      "items": [
+        { "name": "Vegetables", "quantity": 150, "calories": 120 },
+        { "name": "Soy Sauce", "quantity": 1, "calories": 50 },
+        { "name": "Tofu", "quantity": 100, "calories": 120 },
+        { "name": "Sesame Oil", "quantity": 1, "calories": 120 }
+      ]
+    },
+    {
+      "id": 39,
+      "dishName": "Vegetable Samosa",
+      "items": [
+        { "name": "Flour", "quantity": 100, "calories": 364 },
+        { "name": "Potatoes", "quantity": 100, "calories": 77 },
+        { "name": "Spices", "quantity": 1, "calories": 30 },
+        { "name": "Oil", "quantity": 50, "calories": 450 }
+      ]
+    },
+    {
+      "id": 40,
+      "dishName": "Veg Pakora",
+      "items": [
+        { "name": "Chickpea Flour", "quantity": 100, "calories": 387 },
+        { "name": "Vegetables", "quantity": 100, "calories": 70 },
+        { "name": "Oil", "quantity": 50, "calories": 450 },
+        { "name": "Spices", "quantity": 1, "calories": 30 }
+      ]
+    },
+    {
+      "id": 41,
+      "dishName": "Spaghetti Aglio e Olio",
+      "items": [
+        { "name": "Spaghetti", "quantity": 1, "calories": 250 },
+        { "name": "Olive Oil", "quantity": 1, "calories": 120 },
+        { "name": "Garlic", "quantity": 2, "calories": 8 },
+        { "name": "Parmesan", "quantity": 50, "calories": 150 }
+      ]
+    },
+    {
+      "id": 42,
+      "dishName": "Vegetarian Chili",
+      "items": [
+        { "name": "Beans", "quantity": 100, "calories": 114 },
+        { "name": "Tomatoes", "quantity": 100, "calories": 18 },
+        { "name": "Onions", "quantity": 50, "calories": 20 },
+        { "name": "Spices", "quantity": 1, "calories": 30 }
+      ]
+    },
+    {
+      "id": 43,
+      "dishName": "Cabbage Rolls",
+      "items": [
+        { "name": "Cabbage", "quantity": 200, "calories": 50 },
+        { "name": "Rice", "quantity": 100, "calories": 130 },
+        { "name": "Vegetables", "quantity": 100, "calories": 70 },
+        { "name": "Tomato Sauce", "quantity": 50, "calories": 100 }
+      ]
+    },
+    {
+      "id": 44,
+      "dishName": "Vegetable Biryani",
+      "items": [
+        { "name": "Rice", "quantity": 200, "calories": 260 },
+        { "name": "Vegetables", "quantity": 100, "calories": 70 },
+        { "name": "Yogurt", "quantity": 50, "calories": 60 },
+        { "name": "Spices", "quantity": 1, "calories": 30 }
+      ]
+    },
+    {
+      "id": 45,
+      "dishName": "Vegetable Frittata",
+      "items": [
+        { "name": "Eggs", "quantity": 2, "calories": 140 },
+        { "name": "Vegetables", "quantity": 150, "calories": 70 },
+        { "name": "Cheese", "quantity": 50, "calories": 200 },
+        { "name": "Olive Oil", "quantity": 1, "calories": 120 }
+      ]
+    },
+    {
+      "id": 46,
+      "dishName": "Carrot Cake",
+      "items": [
+        { "name": "Flour", "quantity": 200, "calories": 364 },
+        { "name": "Sugar", "quantity": 100, "calories": 400 },
+        { "name": "Carrots", "quantity": 100, "calories": 40 },
+        { "name": "Butter", "quantity": 50, "calories": 380 }
+      ]
+    },
+    {
+      "id": 47,
+      "dishName": "Vegetable Baked Ziti",
+      "items": [
+        { "name": "Ziti Pasta", "quantity": 100, "calories": 200 },
+        { "name": "Tomato Sauce", "quantity": 100, "calories": 50 },
+        { "name": "Cheese", "quantity": 50, "calories": 200 },
+        { "name": "Vegetables", "quantity": 150, "calories": 120 }
+      ]
+    },
+    {
+      "id": 48,
+      "dishName": "Vegetable Quesadilla",
+      "items": [
+        { "name": "Tortilla", "quantity": 1, "calories": 150 },
+        { "name": "Cheese", "quantity": 50, "calories": 200 },
+        { "name": "Vegetables", "quantity": 100, "calories": 70 },
+        { "name": "Salsa", "quantity": 1, "calories": 30 }
+      ]
+    },
+    {
+      "id": 49,
+      "dishName": "Vegetable Stir Fry",
+      "items": [
+        { "name": "Vegetables", "quantity": 200, "calories": 140 },
+        { "name": "Soy Sauce", "quantity": 1, "calories": 50 },
+        { "name": "Tofu", "quantity": 100, "calories": 120 },
+        { "name": "Sesame Oil", "quantity": 1, "calories": 120 }
+      ]
+    },
+    {
+      "id": 50,
+      "dishName": "Eggplant Parmesan",
+      "items": [
+        { "name": "Eggplant", "quantity": 200, "calories": 50 },
+        { "name": "Tomato Sauce", "quantity": 100, "calories": 50 },
+        { "name": "Cheese", "quantity": 50, "calories": 200 },
+        { "name": "Breadcrumbs", "quantity": 50, "calories": 200 }
+      ]
+    }
+  ]

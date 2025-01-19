@@ -1,0 +1,113 @@
+/* EditDish.css */
+
+/* General container styling */
+.edit-dish-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.edit-dish-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* Form styling */
+.edit-dish-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Input field styling */
+.edit-dish-name-input,
+.edit-dish-item-name-input,
+.edit-dish-item-quantity-input,
+.edit-dish-item-calories-input {
+  width: 96%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Input hover and focus effects */
+.edit-dish-name-input:focus,
+.edit-dish-item-name-input:focus,
+.edit-dish-item-quantity-input:focus,
+.edit-dish-item-calories-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Items container */
+.edit-dish-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Each item row */
+.edit-dish-item-row {
+  display: flex;
+  gap: 10px;
+}
+
+/* Adjust input size for item rows */
+.edit-dish-item-name-input,
+.edit-dish-item-quantity-input,
+.edit-dish-item-calories-input {
+  flex: 1;
+}
+
+/* Button styling */
+.edit-dish-add-item-button,
+.edit-dish-submit-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Add Item Button */
+.edit-dish-add-item-button {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.edit-dish-add-item-button:hover {
+  background-color: #218838;
+}
+
+/* Submit Button */
+.edit-dish-submit-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.edit-dish-submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 480px) {
+  .edit-dish-item-row {
+    flex-direction: column;
+  }
+
+  .edit-dish-add-item-button,
+  .edit-dish-submit-button {
+    width: 100%;
+  }
+}

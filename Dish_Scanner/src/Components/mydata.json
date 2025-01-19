@@ -1,0 +1,327 @@
+{
+  "-OGtA8tRYuSEvHGAStf7": {
+    "dishName": "Aloo Tikki",
+    "items": [
+      {
+        "calories": "120",
+        "name": "Potato",
+        "quantity": "1"
+      },
+      {
+        "calories": "50",
+        "name": "Onion",
+        "quantity": "2"
+      }
+    ]
+  },
+  "-OGtAP7ldXJxEEvPPsrl": {
+    "dishName": "Chole Bhature",
+    "items": [
+      {
+        "calories": "200",
+        "name": "Chole",
+        "quantity": "1"
+      },
+      {
+        "calories": "250",
+        "name": "Bhature",
+        "quantity": "2"
+      }
+    ]
+  },
+  "-OGtB4h8Dq6FRM2AHXSX": {
+    "dishName": "Dosa",
+    "items": [
+      {
+        "calories": "150",
+        "name": "Rice Flour",
+        "quantity": "2"
+      },
+      {
+        "calories": "100",
+        "name": "Sambar",
+        "quantity": "1"
+      },
+      {
+        "calories": "40",
+        "name": "Coconut Chutney",
+        "quantity": "1"
+      }
+    ]
+  },
+  "-OGtBDZzWhY6IO27et99": {
+    "dishName": "Pav Bhaji",
+    "items": [
+      {
+        "calories": "100",
+        "name": "Pav",
+        "quantity": "2"
+      },
+      {
+        "calories": "200",
+        "name": "Bhaji",
+        "quantity": "1"
+      },
+      {
+        "calories": "150",
+        "name": "Butter",
+        "quantity": "1"
+      }
+    ]
+  },
+  "-OGtBEQeCqCk83ighss3": {
+    "dishName": "Biryani",
+    "items": [
+      {
+        "calories": "300",
+        "name": "Rice",
+        "quantity": "2"
+      },
+      {
+        "calories": "120",
+        "name": "Chicken",
+        "quantity": "1"
+      },
+      {
+        "calories": "50",
+        "name": "Spices",
+        "quantity": "1"
+      }
+    ]
+  },
+  "-OGtBEu4taWDQ2fsZEXB": {
+    "dishName": "Samosa",
+    "items": [
+      {
+        "calories": "150",
+        "name": "Potato",
+        "quantity": "2"
+      },
+      {
+        "calories": "100",
+        "name": "Flour",
+        "quantity": "1"
+      },
+      {
+        "calories": "80",
+        "name": "Oil",
+        "quantity": "1"
+      }
+    ]
+  },
+  "-OGtBFMGR46LwhMDHN7j": {
+    "dishName": "Pasta",
+    "items": [
+      {
+        "calories": "200",
+        "name": "Pasta",
+        "quantity": "2"
+      },
+      {
+        "calories": "100",
+        "name": "Tomato Sauce",
+        "quantity": "1"
+      },
+      {
+        "calories": "50",
+        "name": "Cheese",
+        "quantity": "1"
+      }
+    ]
+  },
+  "-OGtBFldMeD7T9Euq7BO": {
+    "dishName": "Fried Chicken",
+    "items": [
+      {
+        "calories": "250",
+        "name": "Chicken",
+        "quantity": "2"
+      },
+      {
+        "calories": "100",
+        "name": "Flour",
+        "quantity": "1"
+      },
+      {
+        "calories": "80",
+        "name": "Oil",
+        "quantity": "1"
+      }
+    ]
+  },
+  "-OGtBGDXvsbfDIStBVyR": {
+    "dishName": "Cheese Burger",
+    "items": [
+      {
+        "calories": "300",
+        "name": "Burger Bun",
+        "quantity": "1"
+      },
+      {
+        "calories": "150",
+        "name": "Cheese",
+        "quantity": "1"
+      },
+      {
+        "calories": "100",
+        "name": "Patty",
+        "quantity": "1"
+      }
+    ]
+  },
+  "-OGtBGblollysWfw5VZp": {
+    "dishName": "Fried Rice",
+    "items": [
+      {
+        "calories": "200",
+        "name": "Rice",
+        "quantity": "2"
+      },
+      {
+        "calories": "80",
+        "name": "Vegetables",
+        "quantity": "1"
+      },
+      {
+        "calories": "50",
+        "name": "Soy Sauce",
+        "quantity": "1"
+      }
+    ]
+  },
+  "-OGtBH2kVrlRaPSIaPow": {
+    "dishName": "Momos",
+    "items": [
+      {
+        "calories": "100",
+        "name": "Momo Skin",
+        "quantity": "2"
+      },
+      {
+        "calories": "50",
+        "name": "Stuffing",
+        "quantity": "1"
+      }
+    ]
+  },
+  "-OGtBHT0h8_f8_dWQoC1": {
+    "dishName": "Pizza",
+    "items": [
+      {
+        "calories": "300",
+        "name": "Pizza Dough",
+        "quantity": "1"
+      },
+      {
+        "calories": "150",
+        "name": "Tomato Sauce",
+        "quantity": "1"
+      },
+      {
+        "calories": "200",
+        "name": "Cheese",
+        "quantity": "1"
+      }
+    ]
+  },
+  "-OGtBHs3YKsDUMUSJiUj": {
+    "dishName": "Tacos",
+    "items": [
+      {
+        "calories": "150",
+        "name": "Taco Shell",
+        "quantity": "2"
+      },
+      {
+        "calories": "100",
+        "name": "Filling",
+        "quantity": "1"
+      }
+    ]
+  },
+  "-OGtBII6zZQjNLgNHtLp": {
+    "dishName": "Lasagna",
+    "items": [
+      {
+        "calories": "200",
+        "name": "Pasta Sheets",
+        "quantity": "2"
+      },
+      {
+        "calories": "150",
+        "name": "Tomato Sauce",
+        "quantity": "1"
+      },
+      {
+        "calories": "100",
+        "name": "Cheese",
+        "quantity": "1"
+      }
+    ]
+  },
+  "-OGtBIgmC6afi6TW5O0a": {
+    "dishName": "Spaghetti",
+    "items": [
+      {
+        "calories": "200",
+        "name": "Spaghetti",
+        "quantity": "2"
+      },
+      {
+        "calories": "100",
+        "name": "Tomato Sauce",
+        "quantity": "1"
+      },
+      {
+        "calories": "50",
+        "name": "Cheese",
+        "quantity": "1"
+      }
+    ]
+  },
+  "-OGtBJ4AXV3z-WRZrQyn": {
+    "dishName": "Pav Bhaji",
+    "items": [
+      {
+        "calories": "250",
+        "name": "Pav",
+        "quantity": "2"
+      },
+      {
+        "calories": "150",
+        "name": "Bhaji",
+        "quantity": "1"
+      }
+    ]
+  },
+  "-OGtBJYQSOYbw3F8-m2x": {
+    "dishName": "Chole",
+    "items": [
+      {
+        "calories": "100",
+        "name": "Chole",
+        "quantity": "1"
+      },
+      {
+        "calories": "50",
+        "name": "Onion",
+        "quantity": "1"
+      }
+    ]
+  },
+  "-OGtBKMYVg27sQNtlhgT": {
+    "dishName": "Aloo Gobi",
+    "items": [
+      {
+        "calories": "100",
+        "name": "Aloo",
+        "quantity": "2"
+      },
+      {
+        "calories": "50",
+        "name": "Gobi",
+        "quantity": "1"
+      }
+    ]
+  }
+}
