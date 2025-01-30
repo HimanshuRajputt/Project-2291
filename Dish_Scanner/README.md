@@ -72,9 +72,6 @@ To experience the **Dish Scanner Application** in action, use the following dumm
 - **Real-Time Data Interaction**: Ensured that user interactions and data are dynamically updated in real-time.
 - **Data Visualization**: Created engaging, dynamic charts using **Recharts** to display real-time food data.
 
-## 🔗 Links
-
-- **Live Site**: [Watch Live](https://subtle-hamster-632f37.netlify.app/)
 
 ## 🚀 **Hackathon Journey**
 
