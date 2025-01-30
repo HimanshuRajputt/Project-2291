@@ -27,6 +27,16 @@ Welcome to the **Dish Scanner** app, created during a **48-hour Hackathon**! Thi
 ### **Know Why Page (WHO Data)**
 ![Know Why Page](https://github.com/user-attachments/assets/e31d0318-c871-4014-9168-17b9ad159c1b)
 
+### QR Codes for Live Experience
+
+To experience the **Dish Scanner Application** in action, use the following dummy QR codes. Since we have limited data stored in the backend, these QR codes are provided for testing purposes.
+
+**QR1:**
+![QR_Hackathon_food](https://github.com/user-attachments/assets/fe55686f-778d-4c57-9337-0c0757f833bb)
+
+**QR2:**
+![QR_Hackathon_Food2](https://github.com/user-attachments/assets/b050bc3e-b293-4c33-8e91-91d6044f831a)
+
 ## 🌟 Features
 
 - **User Registration**: Users can sign up and log in securely to access all app features.
