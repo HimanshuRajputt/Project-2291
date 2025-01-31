@@ -79,6 +79,20 @@ To experience the **Dish Scanner Application** in action, use the following dumm
 - **Objective**: Build an end-to-end web application with real-time data interaction, secure authentication, and interactive features.
 - **Outcome**: A fully functional QR code-based calorie scanner and an admin-controlled user management system with dynamic data visualization.
 
+Here is the extracted text from the image:
+
+**Team Members:**  
+
+**Team Lead: Himanshu Rajput **  
+
+**Team Member-1 :** Himanshu Rajput  
+
+**Team Member-2 :** Bikash Prasad Barnwal  
+
+**Team Member-3 :** Siddhesh Suryakant Kolambekar
+
+**Team Member-4 :** Akash
+
 ## 📌 Tags & Hashtags
 
 #React #Vite #Firebase #WebDevelopment #HackathonProject #QRScanner #DataVisualization #WHOData #WebApp #TechInnovation #FullStackDevelopment #MERNstack #TailwindCSS #FrontendDevelopment #LearningByDoing
