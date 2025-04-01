@@ -1,17 +1,27 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const UserContext = createContext();
+// eslint-disable-next-line react-refresh/only-export-components
+export const UserContext = createContext();
 // eslint-disable-next-line react/prop-types
 export const UserProvider = ({ children }) => {
-  const [name, setName] = useState("");
+  const navigate= useNavigate()
+  const [userlogin, SetuserLogin] = useState(false);
+
+  const handleUserLogin=()=>{
+       localStorage.removeItem("authToken");
+       localStorage.removeItem("role");
+        navigate("/")
+    SetuserLogin(!userlogin)
+  }
 
   return (
-    <UserContext.Provider value={{ name, setName }}>
+    <UserContext.Provider value={{ userlogin, handleUserLogin }}>
       {children}
     </UserContext.Provider>
   );
 };
 
-export const useUser = () => {
-  return useContext(UserContext);
-};
+// export const useUser = () => {
+//   return useContext(UserContext);
+// };

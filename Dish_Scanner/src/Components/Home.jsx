@@ -1,91 +1,163 @@
-// import React from "react";
-
-import { Link } from "react-router-dom";
-
+import { useState } from "react";
+import { ArrowRight, Sparkles } from "lucide-react";
+import TrueFocus from "./TrueFocus";
+// import { UserContext } from "../Context/UserContext";
+import { useNavigate } from "react-router-dom";
 const Home = () => {
+  const [isHovered, setIsHovered] = useState(false);
+  // const { userlogin } = useContext(UserContext);
+  const navigate = useNavigate();
+  const token = localStorage.getItem("authToken")
+
+  const handleScanClick = () => {
+    if (token) {
+      navigate("/Scanner");
+    } else {
+      navigate("/login");
+    }
+  };
+
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="min-h-screen bg-white relative overflow-hidden">
+      {/* Background Images */}
+      {/* <div className="fixed inset-0 z-0">
+        <img
+          src="https://ik.imagekit.io/m9qnay09g/qr-scan.gif?updatedAt=1737218123677"
+          alt="Background Pattern"
+          className="absolute top-0 right-0 w-64 h-64 object-cover opacity-10 rotate-45"
+        />
+        <img
+          src="https://ik.imagekit.io/m9qnay09g/qr-scan.gif?updatedAt=1737218123677"
+          alt="Background Pattern"
+          className="absolute bottom-0 left-0 w-72 h-72 object-cover opacity-10 -rotate-45"
+        />
+      </div> */}
+
       {/* Main Content */}
-      <main className="flex-1 bg-orange-50 px-4 py-8">
-        <div className="h-full max-w-5xl mx-auto flex items-center">
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-            {/* Left Column */}
-            <div className="space-y-4 text-center md:text-left">
-              <div className="rounded w-full max-w-sm mx-auto md:mx-0">
-                <img
-                  className="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover mx-auto md:mx-0"
-                  src="https://img.freepik.com/free-vector/qr-code-scanning-concept-with-characters_23-2148637164.jpg?t=st=1737236975~exp=1737240575~hmac=505f72c9cc3f638ffc6d21768c497e2e6c0c7528c14296f88c524b5532e911fd&w=740"
-                  alt="QR Code Scanner"
-                />
-              </div>
-              <p className="text-gray-600 max-w-md mx-auto md:mx-0 text-sm md:text-base">
-                Effortlessly track your meal's nutritional value with our QR
-                Code Calories Calculator. Simply scan the QR code of your dish,
-                and get instant insights into its calorie count and nutritional
-                breakdown. Stay informed and make healthier choices with ease!
-              </p>
-
-              <Link to="/Login">
-                <button className="w-full md:w-auto bg-yellow-300 hover:bg-yellow-400 px-6 py-2 rounded-full font-medium">Scan QR</button>{" "}
-              </Link>
-
-              <div className="flex justify-center md:justify-start space-x-4">
-                <a href="#" className="text-gray-400 hover:text-gray-600">
-                  {/* SVG Icons */}
-                </a>
-              </div>
+      <main className="container mx-auto px-4 py-8 md:py-4 relative z-10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+          {/* Left Column */}
+          <div className="flex-1 text-center md:text-left space-y-8">
+            <div className="relative w-full max-w-lg mx-auto md:mx-0">
+              <img
+                src="https://ik.imagekit.io/m9qnay09g/Order%20food%20(2).gif"
+                alt="Food ordering animation"
+                className="relative w-full h-auto rounded-2xl "
+              />
             </div>
 
-            {/* Right Column */}
-            <div className="relative mt-8 md:mt-0">
-              <div className="bg-yellow-200 rounded-full p-4 md:p-8">
-                <div className="relative">
-                  <img
-                    src="https://img.freepik.com/premium-vector/qr-code-scanning-smartphone-screen-outline-icon-digital-designs_1137529-47469.jpg?w=740"
-                    alt="QR Code verification illustration"
-                    className="w-full h-auto rounded-full"
-                  />
-                  <div className="absolute -left-2 md:-left-4 bottom-0">
-                    <div className="bg-blue-600 text-white p-1.5 md:p-2 rounded-full">
-                      <svg
-                        className="w-4 h-4 md:w-6 md:h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 ">
+              <p className="text-lg md:text-xl text-gray-700 max-w-xl mx-auto md:mx-0 leading-relaxed">
+                Effortlessly track your meals nutritional value with our QR Code
+                Calories Calculator. Simply scan the QR code of your dish, and
+                get instant insights into its calorie count and nutritional
+                breakdown.
+              </p>
+            </div>
+
+            <button
+              onClick={handleScanClick}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-2 hover:gap-4 mx-auto md:mx-0"
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                Scan QR
+                <ArrowRight
+                  className={`w-5 h-5 transition-transform duration-300 ${
+                    isHovered ? "translate-x-1" : ""
+                  }`}
+                />
+              </span>
+              <Sparkles
+                className={`absolute right-4 w-5 h-5 transition-opacity duration-300 ${
+                  isHovered ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            </button>
+          </div>
+          {/* Right Column */}
+          <div className="flex-1 relative">
+            <TrueFocus
+              sentence="Scan Your Dish"
+              manualMode={false}
+              blurAmount={4}
+              borderColor="black"
+              animationDuration={1}
+              pauseBetweenAnimations={1}
+            />
+            <h2 className="text-5xl font-bold text-center"></h2>
+            <h1 className="text-6xl font-bold mb-10 text-center">
+              Track your Calories
+            </h1>
+            <div className="relative transform hover:scale-105 transition-transform duration-500">
+              <img
+                src="https://ik.imagekit.io/m9qnay09g/QR%20Code%20(1).gif"
+                alt="QR Code verification illustration"
+                className="w-full h-auto max-w-lg mx-auto rounded-2xl "
+              />
             </div>
           </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="grid md:grid-cols-3 gap-8 mt-20">
+          {[
+            {
+              title: "Quick Scan",
+              description: "Instantly scan QR codes on your meals",
+              image: "https://ik.imagekit.io/m9qnay09g/QR%20Code%20(2).gif",
+            },
+            {
+              title: "Detailed Analysis",
+              description: "Get comprehensive nutritional information",
+              image: "https://ik.imagekit.io/m9qnay09g/Analysis.gif",
+            },
+            {
+              title: "Health Insights",
+              description: "Track your daily nutritional intake",
+              image:
+                "https://ik.imagekit.io/m9qnay09g/Prevent%20epidemic%20rebound.gif",
+            },
+          ].map((feature, index) => (
+            <div
+              key={index}
+              className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+            >
+              <img
+                src={feature.image}
+                alt={feature.title}
+                className="w-40 h-40 mx-auto mb-4 rounded-lg"
+              />
+              <h3 className="text-xl font-semibold mb-2 text-center">
+                {feature.title}
+              </h3>
+              <p className="text-gray-600 text-center">{feature.description}</p>
+            </div>
+          ))}
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="bg-blue-600 text-white py-4 px-4">
-        <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 md:gap-0">
-            <p className="text-xs md:text-base text-center md:text-left">
+      <footer className="bg-white/90 backdrop-blur-sm border-t border-gray-200 relative z-10">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-600">
               © 2025 Calorie Counter. All rights reserved.
             </p>
-            <div className="flex justify-center md:justify-end gap-4 text-xs md:text-sm">
-              <a href="#" className="hover:text-gray-200">
-                Privacy
-              </a>
-              <a href="#" className="hover:text-gray-200">
-                Terms
-              </a>
-              <a href="#" className="hover:text-gray-200">
-                Contact
-              </a>
+            <div className="flex gap-8">
+              {["Privacy", "Terms", "Contact"].map((item) => (
+                <button
+                  key={item}
+                  onClick={() =>
+                    (window.location.href = `/${item.toLowerCase()}`)
+                  }
+                  className="relative text-gray-600 hover:text-blue-600 transition-colors duration-300 group"
+                >
+                  {item}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full" />
+                </button>
+              ))}
             </div>
           </div>
         </div>

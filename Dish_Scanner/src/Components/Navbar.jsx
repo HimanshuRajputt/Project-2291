@@ -1,47 +1,110 @@
-import  { useState } from "react";
+import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-// import AppLogo2 from "../../assets/AppLogo.jpg";
+import { UserContext } from "../Context/UserContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navLinks = [
-    { path: "/", label: "HOME" },
-    { path: "/Calorie", label: "CALORIE" },
-    { path: "/About", label: "ABOUT" },
-    { path: "/Team", label: "TEAM" },
-    { path: "/Login", label: "Login/SignUp" },
-    { path: "/KnowWhy", label: "Know Why?", isSpecial: true },
-  ];
+  const { handleUserLogin } = useContext(UserContext);
+  const role= localStorage.getItem("role")
+  const token= localStorage.getItem("authToken")
+  // console.log(role)
+
   return (
-    <nav className="bg-blue-50 shadow-lg">
+    <nav className="bg-blue-100 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <img
-              className="h-16 w-auto"
-              src="https://ik.imagekit.io/m9qnay09g/DiScanner-removebg-preview.png?updatedAt=1737288472259"
-              alt="App Logo"
-            />
+            <Link to="/">
+              <img
+                className="h-16 w-auto"
+                src="https://ik.imagekit.io/m9qnay09g/DiScanner-removebg-preview.png?updatedAt=1737288472259"
+                alt="App Logo"
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:space-x-8">
-            {navLinks.map(({ path, label, isSpecial }) => (
-              <a
-                key={path}
-                href={path}
-                className={`text-gray-600 hover:text-gray-900 transition-colors duration-200
-                  ${
-                    isSpecial
-                      ? "border-2 border-gray-600 px-4 py-1 rounded-full hover:border-gray-900"
-                      : ""
-                  }
-                  text-sm font-medium`}
+            <Link
+              to="/"
+              className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors duration-200"
+            >
+              HOME
+            </Link>
+            {role === "admin" ? (
+              <Link
+                to="/all-dishes"
+                className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors duration-200"
               >
-                {label}
-              </a>
-            ))}
+                {/* <button className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-2 py-2 rounded-full text-l  shadow-lg hover:shadow-l transform hover:scale-105 transition-all "> */}
+                AdminPanel
+                {/* <button className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-2 py-2 rounded-full text-l  shadow-lg hover:shadow-l transform hover:scale-105 transition-all ">
+                  AdminPanel
+                </button> */}
+              </Link>
+            ) : (
+              ""
+            )}
+
+            {token ? (
+              <Link
+                to="/Scanner"
+                className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors duration-200"
+              >
+                {/* <button  */}
+                SCANNER
+                {/* </button> */}
+              </Link>
+            ) : (
+              ""
+            )}
+            {token ? (
+              <Link
+                to="/Calorie"
+                className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors duration-200"
+              >
+                CALORIE
+              </Link>
+            ) : (
+              ""
+            )}
+
+            <Link
+              to="/About"
+              className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors duration-200"
+            >
+              ABOUT
+            </Link>
+            <Link
+              to="/Team"
+              className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors duration-200"
+            >
+              TEAM
+            </Link>
+            {token ? (
+              <button
+                onClick={() => handleUserLogin()}
+                className="bg-red-500 px-3 py-2 rounded-lg text-white hover:text-gray-900 text-sm font-medium transition-colors duration-200"
+              >
+                Logout
+              </button>
+            ) : (
+              <Link
+                to="/Login"
+                className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors duration-200"
+              >
+                LOGIN / SIGNUP
+              </Link>
+            )}
+
+            <Link
+              to="/KnowWhy"
+              className="border-2 border-gray-600 px-4 py-1 rounded-full hover:border-gray-900 text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors duration-200"
+            >
+              Know Why?
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -65,20 +128,75 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div className={`md:hidden ${isOpen ? "block" : "hidden"}`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          {navLinks.map(({ path, label, isSpecial }) => (
-            <a
-              key={path}
-              href={path}
-              className={`block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50
-                ${
-                  isSpecial
-                    ? "mt-4 border-2 border-gray-600 text-center mx-3"
-                    : ""
-                }`}
+          <Link
+            to="/"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            HOME
+          </Link>
+          {token ? (
+            <Link
+              to="/Scanner"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+              onClick={() => setIsOpen(!isOpen)}
             >
-              {label}
-            </a>
-          ))}
+              {/* <button className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-2 py-2 rounded-full text-l  shadow-lg hover:shadow-l transform hover:scale-105 transition-all "> */}
+              SCANNER
+              {/* </button> */}
+            </Link>
+          ) : (
+            ""
+          )}
+
+          {token ? (
+            <Link
+              to="/Calorie"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              CALORIE
+            </Link>
+          ) : (
+            ""
+          )}
+          <Link
+            to="/About"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            ABOUT
+          </Link>
+          <Link
+            to="/Team"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            TEAM
+          </Link>
+          {token ? (
+            <button
+              onClick={() => handleUserLogin()}
+              className="bg-red-500 px-3 py-2 rounded-lg text-white hover:text-gray-900 text-sm font-medium transition-colors duration-200"
+            >
+              Logout
+            </button>
+          ) : (
+            <Link
+              to="/Login"
+              className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors duration-200"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              LOGIN / SIGNUP
+            </Link>
+          )}
+          <Link
+            to="/KnowWhy"
+            className="block px-3 py-2 mt-4 border-2 border-gray-600 text-center mx-3 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            Know Why?
+          </Link>
         </div>
       </div>
     </nav>

@@ -45,7 +45,7 @@ const About = () => {
   return (
     <div className=" mt-1 min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-24 overflow-hidden">
+      <div className="relative bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-24 overflow-hidden">
         <div className="absolute inset-0 bg-grid-white/[0.2] bg-grid-white/[0.2]" />
         <div className="container mx-auto px-4 relative">
           <h1 className="text-5xl font-bold mb-6 leading-tight">
@@ -85,7 +85,7 @@ const About = () => {
       </div>
 
       {/* Conditional Rendering of Sections */}
-      <div className=" bg-orange-50  container mx-auto px-4 py-16 ">
+      <div className=" bg-white-50 w container mx-auto px-4 py-16 ">
         {activeTab === "features" && (
           <div className="grid  md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* QR Scanning */}
@@ -171,7 +171,7 @@ const About = () => {
             <p className="text-gray-600 mb-4">
               Our Smart Calorie Tracker allows you to instantly calculate and
               track the calorie content of your meals with just a QR code scan.
-              Here's how it works:
+              Here how it works:
             </p>
             <ol className="space-y-4 text-gray-600">
               <li className="flex items-center space-x-2">
@@ -204,7 +204,7 @@ const About = () => {
             <h2 className="text-3xl font-semibold mb-4">Technical Overview</h2>
             <p className="text-gray-600">
               Our Smart Calorie Tracker app is built using modern technologies
-              to ensure reliability, scalability, and ease of use. Here's a
+              to ensure reliability, scalability, and ease of use. Here is a
               brief overview of the technical aspects:
             </p>
             <ul className="space-y-4 text-gray-600">

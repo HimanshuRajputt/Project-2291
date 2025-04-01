@@ -1,42 +1,50 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MoveLeft } from "lucide-react";
+import axios from "axios";
 
 function AddDish() {
   const [dishName, setDishName] = useState("");
-  const navigate = useNavigate();
   const [items, setItems] = useState([
     { name: "", quantity: "", calories: "" },
   ]);
+  const navigate = useNavigate();
+  const token = localStorage.getItem("authToken");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const newDish = { dishName, items };
-
-    fetch("https://dish-qr-scanner-default-rtdb.firebaseio.com/Dishes/.json", {
-      method: "POST",
-      body: JSON.stringify(newDish),
-    })
-      .then(() => {
-        navigate("/all-dishes");
-      })
-      .catch((error) => {
-        console.error("Error adding dish:", error);
-      });
+    try {
+      // console.log(items)
+      // eslint-disable-next-line no-unused-vars
+      const response = await axios.post(
+        "https://discanner-backend.onrender.com/dishes/add",
+        { dishName: dishName, items },
+        { headers: { token } }
+      );
+      // console.log(response.data)
+      navigate("/all-dishes");
+    } catch (error) {
+      console.error("Error adding dish:", error);
+    }
   };
 
-  const handleItemChange = (index, e) => {
-    const updatedItems = [...items];
-    updatedItems[index][e.target.name] = e.target.value;
-    setItems(updatedItems);
+  const handleItemChange = (index, { target: { name, value } }) => {
+    setItems((prevItems) => {
+      const updatedItems = [...prevItems];
+      updatedItems[index][name] = value;
+      return updatedItems;
+    });
   };
 
   const addItem = () => {
-    setItems([...items, { name: "", quantity: "", calories: "" }]);
+    setItems((prevItems) => [
+      ...prevItems,
+      { name: "", quantity: "", calories: "" },
+    ]);
   };
 
   return (
-    <div className=" min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6">
       <div className="w-full max-w-2xl bg-white shadow-lg rounded-lg p-6">
         <button
           onClick={() => navigate("/all-dishes")}
@@ -62,33 +70,18 @@ function AddDish() {
           <div className="space-y-4">
             {items.map((item, index) => (
               <div key={index} className="flex space-x-3">
-                <input
-                  type="text"
-                  name="name"
-                  className="w-1/3 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400"
-                  placeholder="Item Name"
-                  value={item.name}
-                  onChange={(e) => handleItemChange(index, e)}
-                  required
-                />
-                <input
-                  type="number"
-                  name="quantity"
-                  className="w-1/3 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400"
-                  placeholder="Quantity"
-                  value={item.quantity}
-                  onChange={(e) => handleItemChange(index, e)}
-                  required
-                />
-                <input
-                  type="number"
-                  name="calories"
-                  className="w-1/3 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400"
-                  placeholder="Calories"
-                  value={item.calories}
-                  onChange={(e) => handleItemChange(index, e)}
-                  required
-                />
+                {["name", "quantity", "calories"].map((field, i) => (
+                  <input
+                    key={i}
+                    type={field === "name" ? "text" : "number"}
+                    name={field}
+                    className="w-1/3 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400"
+                    placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
+                    value={item[field]}
+                    onChange={(e) => handleItemChange(index, e)}
+                    required
+                  />
+                ))}
               </div>
             ))}
           </div>

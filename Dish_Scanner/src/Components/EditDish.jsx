@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { MoveLeft } from "lucide-react";
+import axios from "axios";
 
 function EditDish() {
   const { id } = useParams();
@@ -9,48 +10,56 @@ function EditDish() {
   const [items, setItems] = useState([
     { name: "", quantity: "", calories: "" },
   ]);
+  const token = localStorage.getItem("authToken");
 
   useEffect(() => {
-    fetch(
-      `https://dish-qr-scanner-default-rtdb.firebaseio.com/Dishes/${id}.json`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setDishName(data.dishName);
-        setItems(data.items);
-      })
-      .catch((error) => {
-        console.error("Error fetching dish:", error);
-      });
+    fetchDish(id);
   }, [id]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const updatedDish = { dishName, items };
-
-    fetch(
-      `https://dish-qr-scanner-default-rtdb.firebaseio.com/Dishes/${id}.json`,
-      {
-        method: "PUT",
-        body: JSON.stringify(updatedDish),
-      }
-    )
-      .then(() => {
-        navigate("/all-dishes");
-      })
-      .catch((error) => {
-        console.error("Error updating dish:", error);
-      });
+  const fetchDish = async (id) => {
+    try {
+      // console.log(id)
+      const response = await axios.get(
+        `https://discanner-backend.onrender.com/dishes/${id}`,
+        {
+          headers: { token },
+        }
+      );
+      // console.log(response.data); // Log the response for debugging
+      setDishName(response.data.dishName);
+      setItems(response.data.items);
+    } catch (error) {
+      console.error("Error fetching dish:", error);
+    }
   };
 
-  const handleItemChange = (index, e) => {
-    const updatedItems = [...items];
-    updatedItems[index][e.target.name] = e.target.value;
-    setItems(updatedItems);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.put(
+        `https://discanner-backend.onrender.com/dishes/${id}`,
+        { dishName: dishName, items },
+        { headers: { token } }
+      );
+      navigate("/all-dishes");
+    } catch (error) {
+      console.error("Error updating dish:", error);
+    }
+  };
+
+  const handleItemChange = (index, { target: { name, value } }) => {
+    setItems((prevItems) => {
+      const updatedItems = [...prevItems];
+      updatedItems[index][name] = value;
+      return updatedItems;
+    });
   };
 
   const addItem = () => {
-    setItems([...items, { name: "", quantity: "", calories: "" }]);
+    setItems((prevItems) => [
+      ...prevItems,
+      { name: "", quantity: "", calories: "" },
+    ]);
   };
 
   return (
@@ -80,33 +89,18 @@ function EditDish() {
           <div className="space-y-4">
             {items.map((item, index) => (
               <div key={index} className="flex space-x-3">
-                <input
-                  type="text"
-                  name="name"
-                  className="w-1/3 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400"
-                  placeholder="Item Name"
-                  value={item.name}
-                  onChange={(e) => handleItemChange(index, e)}
-                  required
-                />
-                <input
-                  type="number"
-                  name="quantity"
-                  className="w-1/3 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400"
-                  placeholder="Quantity"
-                  value={item.quantity}
-                  onChange={(e) => handleItemChange(index, e)}
-                  required
-                />
-                <input
-                  type="number"
-                  name="calories"
-                  className="w-1/3 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400"
-                  placeholder="Calories"
-                  value={item.calories}
-                  onChange={(e) => handleItemChange(index, e)}
-                  required
-                />
+                {["name", "quantity", "calories"].map((field, i) => (
+                  <input
+                    key={i}
+                    type={field === "name" ? "text" : "number"}
+                    name={field}
+                    className="w-1/3 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400"
+                    placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
+                    value={item[field]}
+                    onChange={(e) => handleItemChange(index, e)}
+                    required
+                  />
+                ))}
               </div>
             ))}
           </div>

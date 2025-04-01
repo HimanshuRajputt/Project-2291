@@ -18,26 +18,27 @@ import Team from "./Components/Team";
 import About from "./Components/About";
 import KnowWhy from "./Components/KnowWhy";
 
-
 function App() {
   return (
     <div>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Calorie" element={<Calorie />} />
+        {/* <Route path="/Calorie" element={<Calorie />} /> */}
         <Route path="/Team" element={<Team />} />
         <Route path="/About" element={<About />} />
         <Route path="/KnowWhy" element={<KnowWhy />} />
-
-        <Route path="/Scanner" element={<Scanner />} />
+        {/* 
+        <Route path="/Scanner" element={<Scanner />} /> */}
         <Route path="/Login" element={<Login />} />
         <Route path="/Signup" element={<SignUp />} />
 
         <Route element={<ProtectedRoutes />}>
+          <Route path="/Scanner" element={<Scanner />} />
+          <Route path="/Calorie" element={<Calorie />} />
           <Route path="/all-dishes" element={<AllDishes />} />
-          <Route path="/add-dish" element={<AddDish />} />
           <Route path="/edit/:id" element={<EditDish />} />
+          <Route path="/add-dish" element={<AddDish />} />
         </Route>
 
         <Route path="/notAdmin" element={<NotAdmin />} />

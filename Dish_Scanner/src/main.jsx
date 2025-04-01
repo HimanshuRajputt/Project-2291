@@ -5,17 +5,17 @@ import "./index.css";
 import App from "./App.jsx";
 import { FoodProvider } from "./Context/FoodContext.jsx";
 import { AdminLoginProvider } from "./Context/AdminLoginContext.jsx";
-// import { UserProvider } from "./Context/UserContext.jsx";
+import { UserProvider } from "./Context/UserContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    {/* <UserProvider> */}
+    <UserProvider>
     <AdminLoginProvider>
       <FoodProvider>
         <App />
       </FoodProvider>
 
     </AdminLoginProvider>
-    {/* </UserProvider> */}
+    </UserProvider>
   </BrowserRouter>
 );
