@@ -3,7 +3,7 @@
 A **Role-Based Access Control (RBAC)** web application built within **48 hours** by a team of 4 during a Hackathon. This project helps users quickly determine the **calorie content in food items** by scanning QR codes. Admins can manage food data, while users can scan and retrieve information effortlessly.
 
 ---
-# [Live Website]:(https://thriving-pie-2d7cc2.netlify.app/)
+# [Live Website](https://thriving-pie-2d7cc2.netlify.app/)
 
 ## 🚀 Features
 
